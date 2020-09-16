@@ -131,7 +131,7 @@ const winterMessage = 'o inverno está chegando'
 */
 
 const harryPotterAuthor = 'J.K. Rowling'
-console.log(harryPotterAuthor.split(' ')[0])
+//console.log(harryPotterAuthor.split(' ')[0])
 
 /*
 14 - Comente o console.log acima, e,
