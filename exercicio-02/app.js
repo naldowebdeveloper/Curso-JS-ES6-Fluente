@@ -83,7 +83,7 @@ const mdn = mozilla[0] + mozilla[8] + mozilla[18]
 */
 
 let randomWord = 'Araponga'
-//console.log(randomWord.length - 1)
+//console.log(randomWord[randomWord.length - 1])
 
 /*
 09 - Comente o console.log acima, e,
@@ -113,7 +113,7 @@ const winterMessage = 'o inverno está chegando'
 - Exiba, no console, o index do caractere "v" da "winterMessage";
 */
 
-//console.log(winterMessage[4])
+//console.log(winterMessage.indexOf('n'))
 
 /*
 12 - Comente o console.log acima, e,
@@ -121,7 +121,7 @@ const winterMessage = 'o inverno está chegando'
 - Exiba, no console, o index da última ocorrência do caractere "n" da "winterMessage".
 */
 
-//console.log(winterMessage[20])
+//console.log(winterMessage.lastIndexOf('n'))
 
 /*
 13 - Comente o console.log acima, e,
@@ -131,7 +131,7 @@ const winterMessage = 'o inverno está chegando'
 */
 
 const harryPotterAuthor = 'J.K. Rowling'
-//console.log(harryPotterAuthor.split(' ')[0])
+//console.log(harryPotterAuthor.slice(0, 4))
 
 /*
 14 - Comente o console.log acima, e,
@@ -142,6 +142,8 @@ const harryPotterAuthor = 'J.K. Rowling'
 */
 
 const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
+const realBestMovie = bestMovie.replace('La la land', 'Moonlight')
+//console.log(realBestMovie)
 
 /*
 15 - Comente o console.log acima, e,
@@ -149,7 +151,8 @@ const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
 - Abaixo deste comentário, armazene o resto de 10 dividido por 3 em uma constante "reminder";
 - Exiba a reminder no console. O resultado deve ser 1;
 */
-
+const reminder = 10 % 3
+//console.log(reminder)
 
 
 /*
@@ -162,6 +165,10 @@ const bestMovie = 'E o Oscar de melhor filme vai para: "La la land"!'
 
 let episodes = 6
 
+episodes++
+
+//console.log(episodes)
+
 /*
 17 - Comente o console.log acima, e,
 
@@ -170,6 +177,9 @@ let episodes = 6
 - O valor exibido no console deve ser 6.
 */
 
+episodes--
+
+//console.log(episodes)
 
 
 /*
@@ -179,6 +189,9 @@ let episodes = 6
 - Após a atribuição, exiba a let "episodes" no console.
 */
 
+episodes += 4
+
+//console.log(episodes)
 
 
 /*
@@ -189,7 +202,8 @@ let episodes = 6
 - Exiba a "allEpisodes" no console.
 */
 
-
+const allEpisodes = 'O nº de episódios é: ' + episodes
+//console.log(allEpisodes)
 
 /*
 20 - Comente o console.log acima, e,
@@ -200,8 +214,8 @@ let episodes = 6
 - Não use template strings.
 */
 
-// const bookMessage = ''O Conto da Aia' é um dos livros mais vendidos da década.'
-// console.log(bookMessage)
+const bookMessage = '\'O Conto da Aia\' é um dos livros mais vendidos da década.'
+//console.log(bookMessage)
 
 /*
 21 - Comente o console.log acima (e a const bookMessage caso não tenha descoberto a resolução), e,
@@ -215,6 +229,9 @@ let episodes = 6
 */
 
 const name = 'walter white'
+let newName = name[0].toUpperCase() + name.slice(1, 6) + ' ' + name[7].toUpperCase() + name.slice(8)
+
+//console.log(newName)
 
 /*
 22 - Comente o console.log acima, e,
@@ -225,3 +242,7 @@ const name = 'walter white'
 - Não modifique a string da const "name";
 - Exiba a "newName" no console;
 */
+
+newName = `${name[0].toUpperCase()}${name.slice(1, 6)} ${name[7].toUpperCase()}${name.slice(8)}`
+
+console.log(newName)
