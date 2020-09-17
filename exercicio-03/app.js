@@ -6,10 +6,13 @@
 - Inicie o seu servidor local e abra o console do browser.
 */
 
+//feito
+
 /*
 02 - Armazene um array vazio em uma let "brazilianFoods";
 */
 
+let brazilianFoods = []
 
 
 /*
@@ -22,7 +25,8 @@
 - Exiba a brazilianFoods no console.
 */
 
-
+brazilianFoods.push('Coxinha',null,'Brigadeiro')
+//console.log(brazilianFoods)
 
 /*
 04 - Comente o console.log acima e:
@@ -32,7 +36,8 @@ array "brazilianFoods" (null) seja substituído por "Pão de Queijo";
 - Exiba apenas o 2º item desse array no console.
 */
 
-
+brazilianFoods[1] = "Pão de Queijo"
+//console.log(brazilianFoods[1])
 
 /*
 05 - Comente o console.log acima e:
@@ -47,7 +52,9 @@ mas sem digitar os nomes das comidas diretamente;
 - Exiba a foodsInfo no console.
 */
 
-
+const foodsInfo = `Até aqui, o  array "brazilianFoods" possui ${brazilianFoods.length} itens: ${brazilianFoods[0]},  
+${brazilianFoods[1]} e ${brazilianFoods[2]}.`
+console.log(foodsInfo)
 
 /*
 06 - Comente o console.log acima e:
