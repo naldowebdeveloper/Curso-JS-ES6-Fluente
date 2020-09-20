@@ -25,6 +25,14 @@
 
 const fruits = ['morango', 'banana', 'mamão']
 
+if(fruits.indexOf('abacaxi') > -1){
+  console.log('A string "abacaxi" existe no array  fruits.')
+}else if(fruits.indexOf('pera') > -1){
+  console.log('A string "pera" existe no array fruits.')
+}else{
+  //console.log('Nem pera nem abacaxi existem no array "fruits".')
+}
+
 /*
   02
 
@@ -37,6 +45,17 @@ const fruits = ['morango', 'banana', 'mamão']
   Obs.: tanto a expressão do lado esquerdo quanto a do lado direito do operador  
   lógico precisam ter a constante especificada. Exemplo: hour > x && hour < y.
 */
+
+const hour = 14
+
+if(hour >= 6 && hour < 12){
+  console.log("Bom dia!")
+}else if(hour >= 12 && hour < 18){
+  //console.log("Boa tarde!")
+}else if(hour > 18){
+  console.log("Boa noite!")
+}
+
 
 /*
   03
@@ -52,6 +71,17 @@ const fruits = ['morango', 'banana', 'mamão']
     também está funcionando.
 */
 
+const idade = 32
+let entrada
+if(idade <= 7 || idade >= 65){
+  entrada = "Para você, a entrada é grátis!"
+  console.log(entrada)
+}else{
+  entrada = "A entrada é R$ 30,00."
+  //console.log(entrada)
+}
+
+
 /*
   04
 
@@ -62,6 +92,13 @@ const fruits = ['morango', 'banana', 'mamão']
 */
 
 const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
+const newsNumbers = []
+for(let i = 0; i < numbers.length; i++){ 
+  if(numbers[i] >= 11){
+    newsNumbers.push(numbers[i])
+  }
+}
+//console.log(newsNumbers)
 
 /*
   05
@@ -77,6 +114,26 @@ const numbers = [7, 92, 34, 46, 90, 25, 11, 3, 89, 76, 99]
 */
 
 const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false]
+let resultBoolean = 0
+let resultNumber = 0
+let resultString = 0
+
+for(let i = 0; i < crazyArray.length; i++){
+  const typeofItem = typeof crazyArray[i]
+  const isItemBoolean = typeof crazyArray[i] === 'boolean'
+  const isItemNumber = typeof crazyArray[i] === 'number'
+  
+  if(typeofItem === 'boolean'){
+    resultBoolean++
+  }else if(typeofItem === 'number'){
+    resultNumber++
+  }else{
+    resultString++
+  }
+   
+}
+
+//console.log(`O crazyArray tem ${resultBoolean} booleans, ${resultNumber} números e ${resultString} strings.`)
 
 /*
   06
@@ -96,3 +153,18 @@ const crazyArray = [true, 869, 'oi', 71, false, 83, '35', true, 397, 'js', false
 */
 
 const randomNumbers = [73, 4, 67, 10, 31, 58]
+let oddNumbers = []
+let evenNumbers = []
+
+for(let i = 0; i < randomNumbers.length; i++){
+  if(randomNumbers[i] % 2 === 0){
+    evenNumbers.push(randomNumbers[i])
+  }else{
+    oddNumbers.push(randomNumbers[i])
+  }
+}
+
+const evenNumbersString = evenNumbers.join(', ').replace(', 3', ' e 3')
+const oddNumbersString = oddNumbers.join(', ').replace(', 5', ' e 5')
+
+console.log(`Numeros ímpares: ${oddNumbersString}. Números pares: ${evenNumbersString}.`)

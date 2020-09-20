@@ -14,8 +14,7 @@
 */
 
 const my3FavoriteTVShows = ['GameOfTrones', 'Dark', 'StrangerThings']
-const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.join(', ')
-                                                   .replace(', S', ' e S')}`
+const sentence = `Minhas 3 séries favoritas são: ${my3FavoriteTVShows.join(', ').replace(', S', ' e S')}`
 //console.log(sentence)
 
 /*
