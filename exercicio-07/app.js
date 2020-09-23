@@ -58,6 +58,18 @@ console.log(soma)
 */
 
 const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sabedoria.']
+let newText = ''
+
+for(let i = 0; i < sentence.length; i++){
+
+  if(sentence[i] === 'certeza'){
+    continue
+  }
+
+  newText += `${sentence[i]} `
+}
+
+console.log(newText)
 
 /*
   05
@@ -75,6 +87,21 @@ const sentence = ['A', 'certeza', 'dúvida', 'é', 'o', 'princípio', 'da', 'sab
 */
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
+let stringsQuant = []
+let booleansQuant = ''
+let arrayInterado = ''
+
+for(let i = 0; i < randomValues.length; i++){
+
+    if(typeof randomValues[i] === 'string'){
+      stringsQuant.push(randomValues[i])
+    }
+
+}
+
+const stringsResult = `${stringsQuant.join(', ').replace(', GitHub' , ' e GitHub')}`
+
+console.log(stringsResult)
 
 /*
   06
