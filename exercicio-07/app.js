@@ -87,21 +87,41 @@ console.log(newText)
 */
 
 const randomValues = [57, false, 'JS', [], true, 'HTML', 31, null, false, 'CSS', 97, true, 'Git', 11, 'sticker', false, 'GitHub', true, null]
-let stringsQuant = []
-let booleansQuant = ''
-let arrayInterado = ''
+
+let stringsAmount = 0
+let stringsItens = []
+let booleansItens = 0
+let totalInterations = 0
 
 for(let i = 0; i < randomValues.length; i++){
+    const item = randomValues[i]
+    const typeofItem = typeof item
+    const isItemAString = typeofItem === 'string'
+    const isItemABoolean = typeofItem === 'boolean'
 
-    if(typeof randomValues[i] === 'string'){
-      stringsQuant.push(randomValues[i])
+    if(stringsAmount === 4){
+      break
     }
 
+    if(isItemAString){
+      stringsAmount++
+      stringsItens.push(item)
+    }
+
+    if(isItemABoolean){
+       booleansItens++
+    }
+
+    totalInterations++
 }
 
-const stringsResult = `${stringsQuant.join(', ').replace(', GitHub' , ' e GitHub')}`
+const lasItem = stringsItens[stringsItens.length - 1]
+const itemString = stringsItens.join(', ').replace(`, ${lasItem}`, ` e ${lasItem}`)
 
-console.log(stringsResult)
+console.log(`3 informações sobre o array randomValues:
+  - As primeiras 4 strings são ${itemString};
+  - Até que as primeiras 4 strings fossem iteradas, ${booleansItens} booleans foram iterados;
+  - O array foi iterado por ${totalInterations} vezes.`)
 
 /*
   06
@@ -123,7 +143,22 @@ console.log(stringsResult)
     da bebida além da que você escolheu.
 */
 
-// const drinkType
+const drinkType = 'suco'
+
+switch(drinkType){
+  case 'agua':
+    console.log("Substância química cujas moléculas são formadas por dois átomos de hidrogênio e um de oxigênio.")
+    break
+  case 'refrigerante':
+    console.log("Bebida não alcoólica e não fermentada, fabricada industrialmente, à base de água mineral e açúcar.")
+    break
+  case 'suco':
+    console.log("Bebida produzida do líquido extraído de frutos.")
+    break
+  default:
+    console.log("Bebida desconhecida.")
+}
+
 
 /*
   07
@@ -133,7 +168,7 @@ console.log(stringsResult)
     para testar o switch que você escreveu.
 */
 
-const a = 2
+const a = 1
 
 // if (a === 0) {
 //   console.log(`O valor de "a" é ${a}`)
@@ -142,3 +177,14 @@ const a = 2
 // } else {
 //   console.log('O valor de "a" é qualquer número, exceto 0 e 1')
 // }
+
+switch(a){
+  case 0:
+    console.log(`O valor de "a" é ${a}`)
+    break
+  case 1:
+    console.log(`O valor de "a" é ${a}`)
+    break
+  default:
+    console.log('O valor de "a" é qualquer número, exceto 0 e 1')
+}
