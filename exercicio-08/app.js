@@ -21,6 +21,12 @@ console.log(multicacao(8, 5))
     2 números.
 */
 
+const divisao = function(n1 = 0, n2 = 0){
+  return n1 / n2
+}
+
+console.log(divisao(10, 2))
+
 
 /*
   03
@@ -34,6 +40,14 @@ console.log(multicacao(8, 5))
 
   "Esta é a Xª vez que essa string é exibida."
 */
+
+const mensagem = function(valor = 'Digite um valor'){ 
+     console.log(valor)                                                
+}
+
+for(let i = 0; i < 7; i++){
+  mensagem(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
+}
 
 /*
   04
