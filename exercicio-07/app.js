@@ -46,7 +46,7 @@ for(let i = 0; i < randomNumbers.length; i++){
   soma += randomNumbers[i]
 }
 
-console.log(soma)
+console.log(soma)   
 
 /*
   04

@@ -7,6 +7,12 @@
   - Exiba o resultado no console, sem inserir um console.log() dentro da função.
 */
 
+function multicacao(n1 = 0, n2 = 0) {
+  return n1 * n2
+}
+
+console.log(multicacao(8, 5))
+
 /*
   02
 
@@ -14,6 +20,7 @@
     **function expression** que retorne o resultado da **divisão** entre esses  
     2 números.
 */
+
 
 /*
   03
