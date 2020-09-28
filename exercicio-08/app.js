@@ -46,7 +46,7 @@ const mensagem = function(valor = 'Digite um valor'){
 }
 
 for(let i = 0; i < 7; i++){
-  mensagem(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
+  //mensagem(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
 }
 
 /*
@@ -62,6 +62,22 @@ for(let i = 0; i < 7; i++){
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
+let newArray = []
+
+function textTransform(millennialWords){
+  
+  for(let i = 0; i < millennialWords.length; i++){
+    newArray.push(millennialWords[i].toUpperCase())
+  }
+  
+}
+
+textTransform(millennialWords)
+
+console.log(`${newArray.join(' ')}`)
+
+
+
 /*
   05
 
@@ -74,6 +90,33 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
+let quantNum = 0
+let numPositivo = 0
+let numNegativo = 0
+
+function funcaoQuantNum(randomNumbers) { 
+      return quantNum = randomNumbers.length      
+}
+
+funcaoQuantNum(randomNumbers)
+
+function funcaoProcuraNums(){ 
+    
+    for(let i = 0; i < randomNumbers.length; i++){
+    
+    if(randomNumbers[i] > 0){
+      numPositivo++
+    }else{
+      numNegativo++
+    }
+    
+  }
+    
+}
+
+funcaoProcuraNums()
+
+console.log(`O array "randomNumbers" possui ${quantNum} números, sendo ${numPositivo} positivos e ${numNegativo} negativos.`)
 
 /*
   06
