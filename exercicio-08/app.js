@@ -65,11 +65,9 @@ const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influenc
 let newArray = []
 
 function textTransform(millennialWords){
-  
   for(let i = 0; i < millennialWords.length; i++){
     newArray.push(millennialWords[i].toUpperCase())
   }
-  
 }
 
 textTransform(millennialWords)
@@ -101,18 +99,15 @@ function funcaoQuantNum(randomNumbers) {
 funcaoQuantNum(randomNumbers)
 
 function funcaoProcuraNums(){ 
-    
-    for(let i = 0; i < randomNumbers.length; i++){
-    
+  for(let i = 0; i < randomNumbers.length; i++){
     if(randomNumbers[i] > 0){
       numPositivo++
     }else{
       numNegativo++
     }
-    
   }
-    
 }
+
 
 funcaoProcuraNums()
 
@@ -128,7 +123,20 @@ console.log(`O array "randomNumbers" possui ${quantNum} números, sendo ${numPos
     função.
 */
 
-// getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+let impares = []
+
+function getOddNumbers(nums){
+  for(let i = 0; i < nums.length; i++){
+    if(nums[i] % 2){
+      impares.push(nums[i])
+    }
+  }
+}
+
+getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+
+console.log(`Números ímpares ${impares.join(', ')}`)
+
 
 /*
   07
@@ -166,3 +174,11 @@ const functions = [
   function () { return 'Índias' },
   function () { return 'Ocidentais.' }
 ]
+
+let frase = []
+
+for(let i = 0; i < functions.length; i++){
+  frase.push(functions[i]())
+}
+
+console.log(`${frase.join(' ')}`)
