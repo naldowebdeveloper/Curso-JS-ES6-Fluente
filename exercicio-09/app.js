@@ -12,10 +12,13 @@
   - Converta a função abaixo em uma arrow function e utilize-a para exibir um  
     valor no console.
 */
+// function convertToString (value) {
+//   return String(value)
+// }
 
-function convertToString (value) {
-  return String(value)
-}
+const convertToString = value => String(value)
+
+console.log(typeof convertToString(10))
 
 /*
   02
@@ -23,6 +26,10 @@ function convertToString (value) {
   - Crie uma função que retorne a quantidade de caracteres que uma string  
     recebida por parâmetro possui.
 */
+
+const quantCaracteres = string => string.length
+
+console.log(quantCaracteres('Ednaldo'))
 
 /*
   03
@@ -34,12 +41,20 @@ function convertToString (value) {
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
 
+const mensagem = "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
+
+const convertLawercase = texto => texto.toLowerCase()  
+
+console.log(convertLawercase(mensagem))
+
 /*
   04
 
   - Crie uma função que recebe 2 parâmetros: um caractere e uma string;
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
+
+
 
 /*
   05
@@ -146,7 +161,7 @@ const review = [
 
 let paragraphs = ''
 
-section.innerHTML = paragraphs
+//section.innerHTML = paragraphs
 
 /*
   14
