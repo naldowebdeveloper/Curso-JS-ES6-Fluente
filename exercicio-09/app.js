@@ -17,7 +17,6 @@
 // }
 
 const convertToString = value => String(value)
-
 console.log(typeof convertToString(10))
 
 /*
@@ -28,7 +27,6 @@ console.log(typeof convertToString(10))
 */
 
 const quantCaracteres = string => string.length
-
 console.log(quantCaracteres('Ednaldo'))
 
 /*
@@ -42,9 +40,7 @@ console.log(quantCaracteres('Ednaldo'))
 */
 
 const mensagem = "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
-
 const convertLawercase = texto => texto.toLowerCase()  
-
 console.log(convertLawercase(mensagem))
 
 /*
@@ -54,7 +50,8 @@ console.log(convertLawercase(mensagem))
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
 
-
+const toString = (caractere, string) => string.indexOf(caractere)
+console.log(toString('3', '123'))
 
 /*
   05
@@ -63,6 +60,10 @@ console.log(convertLawercase(mensagem))
     passado por argumento existe no array (também passado por argumento).
 */
 
+const verifica = (item, array) => array.includes(item)
+
+console.log(verifica(5, [1,2,3]))
+
 /*
   06
 
@@ -70,12 +71,18 @@ console.log(convertLawercase(mensagem))
     argumentos em sua invocação;
 */
 
+const funcArray = (arrayUm, arrayDois) => arrayUm.concat(arrayDois)
+
+console.log(funcArray([1, 2, 3, 4], [5, 6, 7, 8]))
+
 /*
   07
 
   - Crie uma função que retorna o array passado como argumento em sua invocação,  
     mas com o último item removido.
 */
+
+
 
 /*
   08
