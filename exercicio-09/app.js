@@ -61,7 +61,6 @@ console.log(toString('3', '123'))
 */
 
 const verifica = (item, array) => array.includes(item)
-
 console.log(verifica(5, [1,2,3]))
 
 /*
@@ -72,7 +71,6 @@ console.log(verifica(5, [1,2,3]))
 */
 
 const funcArray = (arrayUm, arrayDois) => arrayUm.concat(arrayDois)
-
 console.log(funcArray([1, 2, 3, 4], [5, 6, 7, 8]))
 
 /*
@@ -82,7 +80,8 @@ console.log(funcArray([1, 2, 3, 4], [5, 6, 7, 8]))
     mas com o último item removido.
 */
 
-
+const trasArray = itens => itens.slice(0, -1)
+console.log(trasArray(['um', 'dois', 'tres', 'quatro']))
 
 /*
   08
@@ -90,6 +89,9 @@ console.log(funcArray([1, 2, 3, 4], [5, 6, 7, 8]))
   - Crie uma função que retorna se o valor passado como argumento em sua  
     invocação é null.
 */
+
+const insertNull = value => value === null
+console.log(insertNull(null))
 
 /*
   09
