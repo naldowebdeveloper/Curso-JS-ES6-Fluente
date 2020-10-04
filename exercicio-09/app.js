@@ -104,6 +104,14 @@ console.log(insertNull(null))
     foi exibido.
 */
 
+const invocaCallBack = callback => callback()
+
+const logName = () => {
+  console.log('Ednaldo Brito')
+}
+
+invocaCallBack(logName)
+
 /*
   10
 
@@ -114,6 +122,16 @@ console.log(insertNull(null))
   - Faça com que a invocação da função descrita no 1º item deste exercício (10)  
     resulte no triplo de 33.
 */
+
+const chamaCallback = callback => {
+  callback()
+}
+
+const triplo = num => {
+  return num * 3
+}
+
+chamaCallback(triplo(10))
 
 /*
   11
