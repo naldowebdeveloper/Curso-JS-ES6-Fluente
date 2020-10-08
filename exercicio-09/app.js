@@ -123,15 +123,13 @@ invocaCallBack(logName)
     resulte no triplo de 33.
 */
 
-const chamaCallback = callback => {
-  callback()
+const chamaCallback = (value, callback) => {
+  return callback(value)
 }
 
-const triplo = num => {
-  return num * 3
-}
+const triplo = num => num * 3
 
-chamaCallback(triplo(10))
+console.log(chamaCallback(33, triplo))
 
 /*
   11
@@ -144,6 +142,15 @@ chamaCallback(triplo(10))
 
 const numbers = [1, 2, 3]
 
+const showNumbersItems = (item, index, array) => {
+  const itensPosition = index + 1
+  const items = array.join(', ')
+  
+  console.log(`O ${itensPosition}º item do array [${items}] é ${item}.`)
+}
+
+ numbers.forEach(showNumbersItems)
+
 /*
   12
 
@@ -155,9 +162,16 @@ const numbers = [1, 2, 3]
 const letters = ['v', 'e', 'p']
 let lettersCopy = []
 
-for (let i = 0; i < letters.length; i++) {
-  lettersCopy.push(letters[i])
-}
+// for (let i = 0; i < letters.length; i++) {
+//   lettersCopy.push(letters[i])
+// }
+
+letters.forEach((item) => {
+  lettersCopy.push(item)
+})
+
+console.log(lettersCopy)
+
 
 /*
   13
@@ -188,7 +202,13 @@ const review = [
 
 let paragraphs = ''
 
-//section.innerHTML = paragraphs
+const createParagraph = (item) => {
+  paragraphs += `<p>${item}</p>`
+}
+
+review.forEach(createParagraph)
+
+section.innerHTML = paragraphs
 
 /*
   14
@@ -210,3 +230,24 @@ let paragraphs = ''
     pelo restante da quantidade de pessoas que curtiram o post (além das duas  
     pessoas já mencionadas no início da mensagem).
 */
+
+const nomes = (nomes = []) => {
+    const primeiro = nomes[0]
+    const segundo = nomes[1]
+    const terceiro = nomes[2]
+    const total = nomes.length - 2
+  
+    switch(nomes.length){
+      case 0:
+        return "Ninguém curtiu isso"
+      case 1:
+        return `${primeiro} curtiu isso`
+      case 2:
+        return `${primeiro} e ${segundo} curtiram isso`
+      case 3:
+        return `${primeiro}, ${segundo} e ${terceiro} curtiram isso`
+      default:
+        return `${primeiro}, ${segundo} e mais ${total} pessoas curtiram isso.`
+    }
+}
+console.log(nomes(['ed', 'ze', 'ana']))
