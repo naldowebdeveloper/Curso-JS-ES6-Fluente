@@ -15,7 +15,7 @@ const cat = {
   age : 5,
   color : 'branco',
   bestFriends : ['toto', 'xuxu'],
-  sound : function() { 
+  sound : () => { 
     return 'meoooowwwww'
   }
 }
@@ -56,9 +56,7 @@ const addGato = (friend, object) => {
   console.log(object)
   object.bestFriends.push(friend)
 }
-
 addGato('bruninho', cat)
-
 console.log(cat.bestFriends)
 
 /*
@@ -70,6 +68,25 @@ console.log(cat.bestFriends)
     colchetes.
 */
 
+// const adicionaCor = (cores) => {
+//   cat.color = [cores]
+//   console.log(cat.color)
+// }
+
+// adicionaCor([cat.color, 'cinza'])
+
+// console.log(cat)
+
+const adicionaCor = object => {
+  object['color'] += ` e azul`
+}
+
+adicionaCor(cat)
+
+const colorProperty = 'color'
+
+console.log(cat[colorProperty])
+ 
 /*
   06
 
@@ -77,6 +94,10 @@ console.log(cat.bestFriends)
     parâmetro é um objeto;
   - Utilize a função para exibir no console se "cat" é um objeto.
 */
+
+const verObj = verifica => typeof cat === 'object'
+
+console.log(verObj(cat))
 
 /*
   07
@@ -88,6 +109,20 @@ console.log(cat.bestFriends)
   "A soma das idades de NOME_DO_GATO e NOME_DO_CACHORRO é RESULTADO_DA_SOMA."
 */
 
+const dog = { 
+  nome : 'lara',
+  age : 4,
+  color : 'branco',
+  bestFriends : ['requex', 'honda'],
+  sound : () => {
+    return 'auauauauau'
+  }
+}
+
+const somaoObjt = (cat, dog) => { return `"A soma das idades de ${cat.nome} e ${dog.nome} é ${cat.age + dog.age}."`}
+
+console.log(somaoObjt(cat, dog))
+
 /*
   08
 
@@ -97,15 +132,33 @@ console.log(cat.bestFriends)
 */
 
 const isAnSUV = car => {
-  if (car === 'Honda HR-V' || car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
-    return true
-  }
+  // if (car === 'Honda HR-V' || car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
+  //   return true
+  // }
 
-  return false
+  // return false
+  
+  switch(car){
+    case 'Honda HR-V':
+      console.log('Honda HR-V')
+      break
+    case 'Jeep Renegade':
+      console.log('Jeep Renegade')
+      break
+    case 'Ford EcoSport':
+      console.log('Ford EcoSport')
+      break
+    case 'Hyundai iX35':
+      console.log('Hyundai iX35')
+      break
+    default: 
+      return
+  }
+  
 }
 
-// console.log(isAnSUV('Honda Civic'))
-// console.log(isAnSUV('Ford EcoSport'))
+console.log(isAnSUV('Honda Civic'))
+console.log(isAnSUV('Ford EcoSport'))
 
 /*
   09
