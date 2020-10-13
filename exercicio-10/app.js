@@ -15,9 +15,7 @@ const cat = {
   age : 5,
   color : 'branco',
   bestFriends : ['toto', 'xuxu'],
-  sound : () => { 
-    return 'meoooowwwww'
-  }
+  sound : () => 'meoooowwwww'
 }
 
 console.log(cat)
@@ -114,12 +112,10 @@ const dog = {
   age : 4,
   color : 'branco',
   bestFriends : ['requex', 'honda'],
-  sound : () => {
-    return 'auauauauau'
-  }
+  sound : () => 'auauauauau'
 }
 
-const somaoObjt = (cat, dog) => { return `"A soma das idades de ${cat.nome} e ${dog.nome} é ${cat.age + dog.age}."`}
+const somaoObjt = (cat, dog) =>  `A soma das idades de ${cat.nome} e ${dog.nome} é ${cat.age + dog.age}.`
 
 console.log(somaoObjt(cat, dog))
 
@@ -131,31 +127,12 @@ console.log(somaoObjt(cat, dog))
   - Como você refatoraria esta função?
 */
 
-const isAnSUV = car => {
-  // if (car === 'Honda HR-V' || car === 'Jeep Renegade' || car === 'Ford EcoSport' || car === 'Hyundai iX35') {
-  //   return true
-  // }
-
-  // return false
-  
-  switch(car){
-    case 'Honda HR-V':
-      console.log('Honda HR-V')
-      break
-    case 'Jeep Renegade':
-      console.log('Jeep Renegade')
-      break
-    case 'Ford EcoSport':
-      console.log('Ford EcoSport')
-      break
-    case 'Hyundai iX35':
-      console.log('Hyundai iX35')
-      break
-    default: 
-      return
-  }
-  
-}
+const isAnSUV = car => [
+'Honda HR-V',
+'Jeep Renegade', 
+'Ford EcoSport',
+'Hyundai iX35'
+].includes(car)
 
 console.log(isAnSUV('Honda Civic'))
 console.log(isAnSUV('Ford EcoSport'))
@@ -172,3 +149,17 @@ console.log(isAnSUV('Ford EcoSport'))
     propriedades, retorne a mensagem que a propriedade armazena;
   - Teste a função, exibindo no console a mensagem de cada propriedade.
 */
+
+const getType = type => {
+  const obj = { 
+    null : 'Seta, explicitamente, uma variável sem valor.',
+    undefined : 'Representa um valor não-setado.',
+    object : 'Arrays, Datas, Objetos literais, Funções, etc.'
+  }
+  
+  return obj[type]
+}
+
+console.log(getType('null'))
+console.log(getType('object'))
+console.log(getType('undefined'))
