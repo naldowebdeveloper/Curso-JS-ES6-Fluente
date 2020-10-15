@@ -28,6 +28,8 @@ user.logBlogPosts()
   - Ela deve ter um escopo global.
 */
 
+const myName = "Ednaldo Brito"
+
 /*
   02
 
@@ -41,6 +43,14 @@ user.logBlogPosts()
     defined" será exibido no console;
   - Você sabe por que isso aconteceu?
 */
+
+const mostraIdade = (ano) => {
+  let idade = ano
+  return idade
+}
+
+mostraIdade(32)
+//console.log(idade)
 
 /*
   03
@@ -60,11 +70,31 @@ user.logBlogPosts()
       "O NOME_DO_CARRO está disponível nas cores COR_01, COR_02 e COR_03".
 */
 
+const car = { 
+  name: 'monalisa',
+  brand: 'i30',
+  colors: ['branco', 'preto', 'prata'],
+  isRunning: true,
+  run () {
+    car.isRunning = true
+    console.log(car.isRunning, `A ${car.name} está em movimento`)
+  },
+  stop () {
+    car.isRunning = false
+    console.log(car.isRunning, `A ${car.name} está parada`)
+  },
+  getColorsMessage () {
+    console.log(`A ${car.name} está disponível nas cores ${car.colors[0]}, ${car.colors[1]} e ${car.colors[2]}`)
+  }
+}
+
 /*
   04
 
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
+
+car.run()
 
 /*
   05
@@ -72,11 +102,15 @@ user.logBlogPosts()
   - Faça o carro parar e exiba no console se ele realmente está parado.
 */
 
+car.stop()
+
 /*
   06
 
   - Exiba, no console, a mensagem com as cores do carro.
 */
+
+car.getColorsMessage()
 
 /*
   07
@@ -84,3 +118,5 @@ user.logBlogPosts()
   - Exiba, no console, a mensagem "O carro é um MARCA_DO_CARRO NOME_DO_CARRO";
   - Utilize a notação de colchetes para acessar as propriedades do carro.
 */
+
+console.log(`O carro é um ${car['brand']} ${car['name']}`)
