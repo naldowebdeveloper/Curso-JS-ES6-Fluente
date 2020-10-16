@@ -74,17 +74,19 @@ const car = {
   name: 'monalisa',
   brand: 'i30',
   colors: ['branco', 'preto', 'prata'],
-  isRunning: true,
+  isRunning: false,
   run () {
-    car.isRunning = true
-    console.log(car.isRunning, `A ${car.name} está em movimento`)
+    this.isRunning = true
+    return `A ${this.name} está em movimento`
   },
   stop () {
-    car.isRunning = false
-    console.log(car.isRunning, `A ${car.name} está parada`)
+    this.isRunning = false
+    return `A ${this.name} está parada`
   },
   getColorsMessage () {
-    console.log(`A ${car.name} está disponível nas cores ${car.colors[0]}, ${car.colors[1]} e ${car.colors[2]}`)
+    const lastItem = this.colors[this.colors.length - 1]
+    const colors = this.colors.join(', ').replace(lastItem, `e ${lastItem}`)
+    return `A ${this.name} está disponível nas cores ${colors}`
   }
 }
 
@@ -94,7 +96,8 @@ const car = {
   - Faça o carro andar e exiba no console se ele realmente está em movimento.
 */
 
-car.run()
+console.log(car.run())
+console.log(car.isRunning === true)
 
 /*
   05
@@ -102,7 +105,8 @@ car.run()
   - Faça o carro parar e exiba no console se ele realmente está parado.
 */
 
-car.stop()
+console.log(car.stop())
+console.log(car.isRunning === false)
 
 /*
   06
@@ -110,7 +114,7 @@ car.stop()
   - Exiba, no console, a mensagem com as cores do carro.
 */
 
-car.getColorsMessage()
+console.log(car.getColorsMessage())
 
 /*
   07
