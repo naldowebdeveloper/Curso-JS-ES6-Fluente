@@ -112,7 +112,7 @@ console.log(armazenaNumero(firstNumber))
 */
 
 const secondNumber = 3.5
-console.log(Math.ceil(secondNumber))
+console.log(Math.round(secondNumber))
 
 /*
   06
@@ -131,7 +131,7 @@ console.log(Math.floor(thirdNumber))
 */
 
 const fourthNumber = 5.5
-console.log(Math.floor(fourthNumber).toFixed())
+console.log(Math.trunc(fourthNumber))
 
 /*
   08
@@ -140,4 +140,6 @@ console.log(Math.floor(fourthNumber).toFixed())
     aleatório de 0 à 10, incluindo 0 e 10.
 */
 
-console.log((Math.random() * (0, 10)).toFixed())
+const randomNumber = Math.random()
+
+console.log(Math.round(randomNumber * 10))
