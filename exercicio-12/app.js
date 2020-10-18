@@ -27,6 +27,17 @@ const best2019Movies = [
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
 ]
 
+let mensagem = 'Segundo o site Omelete, os melhores filmes de 2019 são:'
+
+const gereMensagem = filme => {
+  mensagem += `
+  - ${filme.title}, dirigido por ${filme.directedBy}`
+}
+
+best2019Movies.forEach(gereMensagem)
+
+console.log(mensagem)
+
 /*
   02
 
@@ -50,7 +61,7 @@ const youtubeUser = {
       { title: 'Introdução ao TDD - Parte 02 | JavaScript | Jest', length: '28:28' },
       { title: 'Introdução ao TDD | JavaScript | Jest', length: '19:29' },
       { title: 'Higher-order Functions | JavaScript', length: '47:38' }
-    ]
+    ],
   },
   about: {
     description: '🔥 Ensino as pessoas a alcançarem a fluência em JavaScript! 🔥',
@@ -59,8 +70,18 @@ const youtubeUser = {
       gitHub: 'https://github.com/Roger-Melo'
     },
     country: 'Brasil'
+  },
+  mostraVideo () { 
+    console.log(`Vídeos recentes de ${this.name}:`)
+    
+    this.videos.recentVideos.forEach(video =>{
+      console.log(video.title)
+    })
   }
 }
+
+youtubeUser.mostraVideo()
+
 
 /*
   03
@@ -68,7 +89,9 @@ const youtubeUser = {
   - Exiba o valor do PI no console.
 */
 
-
+const pi = Math.PI
+const mostraPi = pi => pi
+console.log(mostraPi(pi))
 
 /*
   04
@@ -78,6 +101,8 @@ const youtubeUser = {
 */
 
 const firstNumber = 8.3
+const armazenaNumero = num => Math.ceil(num)
+console.log(armazenaNumero(firstNumber))
 
 /*
   05
@@ -87,6 +112,7 @@ const firstNumber = 8.3
 */
 
 const secondNumber = 3.5
+console.log(Math.ceil(secondNumber))
 
 /*
   06
@@ -96,6 +122,7 @@ const secondNumber = 3.5
 */
 
 const thirdNumber = 8.9
+console.log(Math.floor(thirdNumber))
 
 /*
   07
@@ -104,6 +131,7 @@ const thirdNumber = 8.9
 */
 
 const fourthNumber = 5.5
+console.log(Math.floor(fourthNumber).toFixed())
 
 /*
   08
@@ -111,3 +139,5 @@ const fourthNumber = 5.5
   - A cada vez que o index.html for carregado, exiba no console um número  
     aleatório de 0 à 10, incluindo 0 e 10.
 */
+
+console.log((Math.random() * (0, 10)).toFixed())
