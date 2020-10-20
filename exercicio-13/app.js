@@ -12,7 +12,17 @@ const getCatInfo = () => {
   const name = 'Marcos'
   let age = 3
   const color = 'Cinza'
+  
+  return {name, age, color}
 }
+
+// const name = getCatInfo().name
+// let age = getCatInfo().age
+// const color = getCatInfo().color
+
+const { name, age, color } = getCatInfo()
+
+console.log(`${name} é um gato ${color} de ${age} anos.`)
 
 /*
   02
@@ -24,12 +34,14 @@ const getCatInfo = () => {
 
 const external = () => {
   const movie = 'Parasite'
-
+  
   const internal = () => {
     const extraInternal = () => {
       console.log(movie.toUpperCase())
     }
+    extraInternal()
   }
+  internal()
 }
 
 external()
@@ -44,6 +56,8 @@ external()
 */
 
 let randomNumbers = [3, 2, 1]
+randomNumbers.reverse()
+console.log(randomNumbers)
 
 /*
   04
