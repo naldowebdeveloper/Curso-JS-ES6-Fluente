@@ -1,3 +1,15 @@
+// const h1 = document.querySelector('body > h1')
+// console.log(h1)
+
+const paragraphs = document.querySelectorAll('p')
+const errors = document.querySelectorAll('.error')
+
+console.log(errors)
+
+// paragraphs.forEach(paragraph => {
+//   console.log(paragraph)
+// })
+
 /*
   01
 
@@ -72,6 +84,8 @@ let crazyArray = [
   function getMessage () { return 'hi' },
   [ 5, 96, 53  ]
 ]
+crazyArray.shift()
+console.log(crazyArray)
 
 /*
   05
@@ -89,6 +103,10 @@ const dogs = [
   { name: 'Zequinha', age: 7, gender: 'Male', breed: 'Poodle' },
   { name: 'Xica', age: 6, gender: 'Female', breed: 'Chihuahua' }
 ]
+
+const zequinha = dogs.find(dog => dog.name === 'Zequinha')
+
+console.log(zequinha)
 
 /*
   06
@@ -122,6 +140,9 @@ const dogs = [
   </section>
 */
 
+const titulo = document.querySelector('.main-title')
+console.log(titulo)
+
 /*
   07
 
@@ -129,3 +150,6 @@ const dogs = [
     página, através da classe deles;
   - Exiba esse NodeList no console.
 */
+
+const titulosSecundarios = document.querySelectorAll('.secondary-title')
+console.log(titulosSecundarios)
