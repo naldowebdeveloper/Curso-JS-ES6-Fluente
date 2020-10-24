@@ -1,3 +1,6 @@
+
+
+
 /*
   01
 
@@ -19,6 +22,13 @@ title.textContent = title.textContent.toUpperCase()
 */
 
 const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
+const ul = document.querySelector('.numbers')
+
+const insertUl = number => {
+  ul.innerHTML += `<li class="number">${number}</li>`
+}
+
+numbers.forEach(insertUl)
 
 /*
   03
@@ -28,6 +38,20 @@ const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
     - Se o número é ímpar, exiba-o na cor "pink".
 */
 
+const lis = document.querySelectorAll('.number')
+
+const chanceLiColor = li => {
+  const liNumbers = Number(li.textContent) % 2 === 0
+  
+  if(liNumbers){
+    li.style.color = "lightblue"
+    return
+  }
+  
+  li.style.color = "pink"
+}
+
+lis.forEach(chanceLiColor)
 
 
 /*
