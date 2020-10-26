@@ -62,6 +62,9 @@ lis.forEach(chanceLiColor)
   P.s: a classe "body-background" já está declarada no style.css.
 */
 
+const body = document.body
+
+body.classList.add('body-background')
 
 
 /*
@@ -72,7 +75,8 @@ lis.forEach(chanceLiColor)
     do link do index.html.
 */
 
-
+const elemento = document.querySelector('.link')
+elemento.setAttribute('href', 'https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo')
 
 /*
   06
@@ -80,7 +84,7 @@ lis.forEach(chanceLiColor)
   - Exiba o novo valor do atributo href do link no console.
 */
 
-
+console.log(elemento.getAttribute('href'))
 
 /*
   07
@@ -89,6 +93,7 @@ lis.forEach(chanceLiColor)
     manipuladas via JS no h1.
 */
 
+console.log(title.style)
 
 
 /*
@@ -97,7 +102,7 @@ lis.forEach(chanceLiColor)
   - Remova a classe "body-background", do elemento body.
 */
 
-
+body.classList.remove('body-background')
 
 /*
   09
@@ -105,3 +110,6 @@ lis.forEach(chanceLiColor)
   - Se o link da página possuir uma classe "link", remova-a;
   - Não utilize o método remove() para fazer isso.
 */
+
+elemento.classList.toggle('link')
+elemento.classList.toggle('link')
