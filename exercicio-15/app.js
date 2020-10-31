@@ -6,6 +6,21 @@
   - Exiba no console os elementos filhos da ul com a classe já inserida.
 */
 
+
+/* Funcionando */
+// const ul = document.querySelector('.videos')
+// const lis = Array.from(ul.children)
+
+// //console.log({ul, lis})
+
+// lis.forEach(li => {
+//   li.classList.add('video')
+// })
+
+// console.log(lis)
+
+
+/* fatorado */
 const ul = document.querySelector('ul')
 const lis = Array.from(ul.children)
 
@@ -53,12 +68,16 @@ console.log('previousElementSibling', ul.previousElementSibling)
     exibida no console.
 */
 
+
+/* Funcionando */
 // lis.forEach(li => {
 //   li.addEventListener('click', event => {
 //     console.log(event.target)
 //   })
 // })
 
+
+/* Fatorado */
 const showClickedLi = event => {
   console.log(event.target)
 }
@@ -87,17 +106,20 @@ const videos = [{
   length: '00:02:55'
 }]
 
+
+/* Funcionando */
 // const button = document.querySelector('button')
 
 // button.addEventListener('click', () => {
-  
 //   videos.forEach(video => {
+//     console.log(video.name)
 //     ul.innerHTML += `<li>${video.name}</li>`
 //   })
-  
+
 // })
 
 
+/* Fatorado */
 const insertVideoLi = ({ name, length }) => {
   ul.innerHTML += `<li>${name} | ${length}</li>`
 }
@@ -117,10 +139,8 @@ button.addEventListener('click', handleClickButton)
     sejam removidos.
 */
 
-const body = document.querySelector('body')
+const body = document.body
 
-const addEventH1 = () => {
+h1.addEventListener('click', () => {
   body.innerHTML = ''
-}
-
-h1.addEventListener('click', addEventH1)
+})
