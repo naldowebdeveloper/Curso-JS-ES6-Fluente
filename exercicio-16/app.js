@@ -7,15 +7,18 @@
 
 const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
+const h2 = document.querySelector('h2')
 
 elementsInsideDiv.forEach(element => {
-  element.addEventListener('click', () => {
-    console.log('Clicou no filho da div.')
+  element.addEventListener('click', event => {
+    event.stopPropagation()
+    
+    h2.textContent = `Clicou no ${event.target.tagName.toLowerCase()}, filho da div.`
   })
 })
 
 div.addEventListener('click', () => {
-  console.log('Clicou na div.')
+  h2.textContent = 'Clicou na div.'
 })
 
 /*
@@ -26,6 +29,8 @@ div.addEventListener('click', () => {
     da div.".
 */
 
+//feito
+
 /*
   03
 
@@ -34,12 +39,18 @@ div.addEventListener('click', () => {
     filho da div, ao invés de ser exibida no console, seja inserida neste h2.
 */
 
+//feito
+
 /*
   04
 
   - Faça com que quando o texto do h2 for copiado, a mensagem "Texto copiado!"  
     seja exibida no console.
 */
+
+h2.addEventListener('copy', () => {
+  console.log('Texto copiado!')
+})
 
 /*
   05
@@ -49,12 +60,27 @@ div.addEventListener('click', () => {
     "Eixo X: COORDENADA_EIXO_X | Eixo Y: COORDENADA_EIXO_Y".
 */
 
+const egg = document.querySelector('.egg')
+//console.log(egg)
+
+egg.addEventListener('mousemove', event => {
+  egg.textContent = `Eixo X: ${event.offsetX} | Eixo Y: ${event.offsetY}`
+})
+
+
 /*
   06
 
   - Modifique a cor do ovo para "lightgoldenrodyellow" quando o botão for 
     clicado.
 */
+
+const button = document.querySelector('button')
+
+button.addEventListener('click', () => {
+  egg.style.backgroundColor = 'lightgoldenrodyellow'
+})
+
 
 /*
   07
@@ -76,3 +102,18 @@ const people = [
   { id: 8, name: 'Matheus Manucci', profession: 'Piloto' },
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
+
+people.forEach(item => {
+  //console.log(item.profession)
+  
+  const frontend = 'Front-end developer'
+  const professions = [item.profession]
+  //console.log(professions)
+  
+  const verificaProfession = professions.some(profession => profession === frontend)
+  
+  if(verificaProfession){
+    console.log("O array people contém, no mínimo, um(a) Front-end developer.")
+  }
+  
+})
