@@ -103,17 +103,30 @@ const people = [
   { id: 9, name: 'Hamilton Silva', profession: 'Advogado' }
 ]
 
-people.forEach(item => {
-  //console.log(item.profession)
+// código funcionando
+
+// people.forEach(item => {
+//   //console.log(item.profession)
   
-  const frontend = 'Front-end developer'
-  const professions = [item.profession]
-  //console.log(professions)
+//   const frontend = 'Front-end developer'
+//   const professions = [item.profession]
+//   //console.log(professions)
   
-  const verificaProfession = professions.some(profession => profession === frontend)
+//   const verificaProfession = professions.some(profession => profession === frontend)
   
-  if(verificaProfession){
-    console.log("O array people contém, no mínimo, um(a) Front-end developer.")
-  }
+//   if(verificaProfession){
+//     console.log("O array people contém, no mínimo, um(a) Front-end developer.")
+//   }
   
-})
+// })
+
+
+//Código fatorado
+
+const isSomePersonFrontDeveloper = people.some(({ profession }) => 
+                                              profession === 'Front-end developer')
+
+if(isSomePersonFrontDeveloper){
+  console.log("O array people contém, no mínimo, um(a) Front-end developer.")
+}
+
