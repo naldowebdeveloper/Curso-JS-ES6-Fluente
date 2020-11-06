@@ -8,18 +8,44 @@
 const div = document.querySelector('div')
 const elementsInsideDiv = Array.from(div.children)
 const h2 = document.querySelector('h2')
+const button = document.querySelector('button')
+const egg = document.querySelector('.egg')
 
-elementsInsideDiv.forEach(element => {
-  element.addEventListener('click', event => {
-    event.stopPropagation()
+// elementsInsideDiv.forEach(element => {
+//   element.addEventListener('click', event => {
+//     event.stopPropagation()
     
-    h2.textContent = `Clicou no ${event.target.tagName.toLowerCase()}, filho da div.`
-  })
-})
+//     h2.textContent = `Clicou no ${event.target.tagName.toLowerCase()}, filho da div.`
+//   })
+// })
 
-div.addEventListener('click', () => {
-  h2.textContent = 'Clicou na div.'
-})
+const showClickElement = ({ target }) => {
+  const clickedElementName = target.tagName.toLowerCase()
+  
+  if(clickedElementName === 'div'){
+    h2.textContent = 'Clicou na div.'
+    return 
+  }
+
+  h2.textContent = `Clicou no ${clickedElementName}, filho da div.`
+}
+
+const logCopyMessage = () => {
+  console.log('Texto copiado!')
+}
+
+const showCoordinates = ({ offsetX, offsetY }) => {
+  egg.textContent = `Eixo X: ${offsetX} | Eixo Y: ${offsetY}`
+}
+
+const changeEggColor = () => {
+  egg.style.backgroundColor = 'lightgoldenrodyellow'
+}
+
+h2.addEventListener('copy', logCopyMessage)
+egg.addEventListener('mousemove', showCoordinates)
+div.addEventListener('click', showClickElement)
+button.addEventListener('click', changeEggColor)
 
 /*
   02
@@ -48,9 +74,9 @@ div.addEventListener('click', () => {
     seja exibida no console.
 */
 
-h2.addEventListener('copy', () => {
-  console.log('Texto copiado!')
-})
+// h2.addEventListener('copy', () => {
+//   console.log('Texto copiado!')
+// })
 
 /*
   05
@@ -60,12 +86,12 @@ h2.addEventListener('copy', () => {
     "Eixo X: COORDENADA_EIXO_X | Eixo Y: COORDENADA_EIXO_Y".
 */
 
-const egg = document.querySelector('.egg')
+// const egg = document.querySelector('.egg')
 //console.log(egg)
 
-egg.addEventListener('mousemove', event => {
-  egg.textContent = `Eixo X: ${event.offsetX} | Eixo Y: ${event.offsetY}`
-})
+// egg.addEventListener('mousemove', event => {
+//   egg.textContent = `Eixo X: ${event.offsetX} | Eixo Y: ${event.offsetY}`
+// })
 
 
 /*
@@ -75,11 +101,11 @@ egg.addEventListener('mousemove', event => {
     clicado.
 */
 
-const button = document.querySelector('button')
+// const button = document.querySelector('button')
 
-button.addEventListener('click', () => {
-  egg.style.backgroundColor = 'lightgoldenrodyellow'
-})
+// button.addEventListener('click', () => {
+//   egg.style.backgroundColor = 'lightgoldenrodyellow'
+// })
 
 
 /*
@@ -106,11 +132,11 @@ const people = [
 // código funcionando
 
 // people.forEach(item => {
-//   //console.log(item.profession)
+//console.log(item.profession)
   
 //   const frontend = 'Front-end developer'
 //   const professions = [item.profession]
-//   //console.log(professions)
+//console.log(professions)
   
 //   const verificaProfession = professions.some(profession => profession === frontend)
   
