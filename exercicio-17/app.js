@@ -4,12 +4,23 @@
   - No envio do form, faça com que a página não seja recarregada.
 */
 
+const form = document.querySelector('form') 
+
+form.addEventListener('submit', event => {
+  event.preventDefault()
+
+  const inputValue = event.target.input.value
+  console.log(inputValue)
+})
+
 /*
   02
 
   - No envio do form obtenha, através do objeto event, o texto inserido no  
     input e exiba-o no console.
 */
+
+
 
 /*
   03
