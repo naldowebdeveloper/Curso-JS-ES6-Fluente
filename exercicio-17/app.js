@@ -4,6 +4,8 @@
   - No envio do form, faça com que a página não seja recarregada.
 */
 
+//feito
+
 const form = document.querySelector('form') 
 
 form.addEventListener('submit', event => {
@@ -20,7 +22,7 @@ form.addEventListener('submit', event => {
     input e exiba-o no console.
 */
 
-
+//feito
 
 /*
   03
@@ -29,6 +31,8 @@ form.addEventListener('submit', event => {
     index.html;
   - Exiba no console o boolean no qual este teste resulta.
 */
+
+
 
 /*
   04
