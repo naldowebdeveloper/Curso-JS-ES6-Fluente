@@ -5,17 +5,33 @@
 */
 
 //feito
+//const regex = /.{7,}/
 
 const form = document.querySelector('form') 
+
+const clearInput = () => {
+  input.value = ''
+  input.focus()
+}
+
+const logMessage = message => {
+  console.log(message)
+  clearInput()
+}
 
 form.addEventListener('submit', event => {
   event.preventDefault()
 
-  const inputValue = event.target.input.value
-  console.log(inputValue)
+  const input = event.target.input
+  const regex = /[a-zA-Z0-9]{7,11}/
+  const isValidValue = regex.test(input.value)
 
+  if(isValidValue) {
+    logMessage('O valor inserido no input é válido =)')
+    return 
+  }
 
-
+  logMessage('Valor inválido =(')
 })
 
 /*
@@ -81,7 +97,7 @@ console.log(NASAResult)
     - "jozeti" não é um valor válido, pois contém 6 caracteres.
 */
 
-
+//feito
 
 /*
   07
@@ -94,3 +110,5 @@ console.log(NASAResult)
     - "0xY79aYx54e" é um valor válido, pois contém 11 letras e números;
     - "eich_1961" não é um valor válido, pois contém um caractere especial.
 */
+
+//feito
