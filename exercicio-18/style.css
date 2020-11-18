@@ -22,3 +22,11 @@
   margin-bottom: 2.5rem;
   color: green;
 }
+
+form .success {
+  border-color:  green;
+}
+
+form .error {
+  border-color: red;
+}
