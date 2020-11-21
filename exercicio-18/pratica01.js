@@ -27,3 +27,6 @@ form.username.addEventListener('keyup', event => {
 
     form.username.setAttribute('class', 'error')
 })
+
+
+//form.username.addEventListener('keyup', event => { })

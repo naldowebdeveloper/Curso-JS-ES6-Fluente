@@ -21,6 +21,23 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 
+
+const form = document.querySelector('form')
+const testUsername = username => /^[a-zA-Z]{6,12}$/.test(username)
+
+form.username.addEventListener('keyup', event => {
+ 
+  const isAValidUsername = testUsername(event.target.value)
+  console.log(event.target.value)
+
+  if(isAValidUsername){
+    form.username.setAttribute('class', 'success')
+    return
+  }
+
+  form.username.setAttribute('class', 'error')
+})
+
 /*
   02
 
@@ -32,6 +49,8 @@
   - Use as classes disponíveis no arquivo style.css para colorir o parágrafo;
   - Não insira o parágrafo manualmente no index.html.
 */
+
+
 
 /*
   03
