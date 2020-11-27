@@ -21,21 +21,23 @@
   Dica: pesquise pelo método "insertAdjacentElement", no MDN;
 */
 
+const inputUsername = document.querySelector('#username')
+const p = document.createElement('p')
 
-const form = document.querySelector('form')
-const testUsername = username => /^[a-zA-Z]{6,12}$/.test(username)
+inputUsername.addEventListener('keyup', event => {
+  const inputValue = event.target.value
+  const usernameRegex = /^[a-zA-Z]{6,}$/
 
-form.username.addEventListener('keyup', event => {
- 
-  const isAValidUsername = testUsername(event.target.value)
-  console.log(event.target.value)
+  p.setAttribute('data-feedback', 'username-feedback')
 
-  if(isAValidUsername){
-    form.username.setAttribute('class', 'success')
+  if(!usernameRegex.test(inputValue)) {
+    p.textContent = 'O valor deve conter no mínimo 6 caracteres, com apenas letras maiúsculas e/ou minúsculas'
+    event.target.insertAdjacentElement('afterend', p)
     return
   }
 
-  form.username.setAttribute('class', 'error')
+  p.textContent = 'Username válido =)'
+  event.target.insertAdjacentElement('afterend', p)
 })
 
 /*
