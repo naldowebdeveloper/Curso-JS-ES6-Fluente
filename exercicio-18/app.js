@@ -82,11 +82,10 @@ form.addEventListener('submit', event => {
   - Não insira o parágrafo manualmente no index.html.
 */
 
-//feito
+//FEITO
 
 /*
   03
-
   - Há algumas aulas, falamos sobre o método some;
   - Neste exercício, seu desafio será criar este método do zero;
   - Implemente uma função "some" que possui a mesma funcionalidade do método  
@@ -104,3 +103,16 @@ form.addEventListener('submit', event => {
   Spoiler alert: este tipo de exercício será frequente em etapas mais avançadas  
   do curso, onde falaremos sobre TDD. Vá se aquecendo =D
 */
+
+const some = (array, func) => {
+  for (let i = 0; i < array.length; i++) {
+    if(func(array[i])) {
+      return true
+    }
+  }
+
+  return false 
+}
+
+console.log(some([1, 2, 3], item  => item === 2))
+console.log(some([1, 2, 5], item  => item === 3))
