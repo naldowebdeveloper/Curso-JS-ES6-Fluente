@@ -28,16 +28,24 @@ const counterContainer = document.querySelector('.counter-container')
 const buttonInitCounter = document.querySelector('.button-init-counter')
 const buttonStopCounter = document.querySelector('.button-stop-counter')
 
-let counter = 0
+let timer = null
+
+const incrementedCounter = () => {
+  const incrementedCounter = Number(counterContainer.textContent) + 1
+  counterContainer.textContent = incrementedCounter
+}
 
 buttonInitCounter.addEventListener('click', () => {
-  setInterval(() => {
-    counterContainer.textContent = Number(counterContainer.textContent) + 1
-  }, 1000)
+  timer = setInterval(incrementedCounter, 1000)
 })
 
+const stopCounter = () => {
+  clearInterval(timer)
+  counterContainer.textContent = 0
+}
+
 buttonStopCounter.addEventListener('click', () => {
-  console.log('Parar contador')
+  stopCounter()
 })
 
 /* 
