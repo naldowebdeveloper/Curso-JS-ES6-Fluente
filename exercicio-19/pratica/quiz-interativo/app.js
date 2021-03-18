@@ -18,14 +18,20 @@ const getUserAnswers = () => {
 
 const calculateUserScore = userAnswers => {
     userAnswers.forEach((userAnswer, index) => {
-        if(userAnswer === correctAnswers[index]){
+        const isUserAnswerCorrect = userAnswer === correctAnswers[index]
+
+        if(isUserAnswerCorrect){
             score += 25
         }
     })
 }
 
 const showFinalScore = () => {
-    scrollTo(0, 0)
+    scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+    })
     finalScoreContainer.classList.remove('d-none')
 }
 
@@ -37,8 +43,7 @@ const animateFinalScore = () => {
             clearInterval(timer)
         }
 
-        finalScoreContainer.querySelector('span').textContent = `${counter}%`
-        counter++
+        finalScoreContainer.querySelector('span').textContent = `${counter++}%`
     }, 10)  
 }
 
