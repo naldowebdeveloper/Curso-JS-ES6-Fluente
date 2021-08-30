@@ -9,7 +9,7 @@
 
 function multicacao(n1 = 0, n2 = 0) {
   return n1 * n2
-}
+}                               
 
 console.log(multicacao(8, 5))
 
@@ -26,7 +26,7 @@ const divisao = function(n1 = 0, n2 = 0){
 }
 
 console.log(divisao(10, 2))
-
+            
 
 /*
   03
@@ -42,14 +42,15 @@ console.log(divisao(10, 2))
 */
 
 const mensagem = function(valor = 'Digite um valor'){ 
-     console.log(valor)                                                
+     console.log(valor)                                            
 }
 
 for(let i = 0; i < 7; i++){
-  //mensagem(`Esta é a ${i + 1}ª vez que essa string é exibida.`)
+  let counter = i + 1 
+  mensagem(`Esta é a ${counter}ª vez que essa string é exibida.`)
 }
-
-/*
+    
+/*         
   04
 
   - Comente o código acima, de forma que a string não seja mais exibida no  
@@ -62,19 +63,20 @@ for(let i = 0; i < 7; i++){
 
 const millennialWords = ['lol', 'yolo', 'troll', 'stalkear', 'selfie', 'influencer', 'crush', 'fitness', 'hater', 'bae', 'random', 'kawaii', 'outfit', 'mood', 'fail']
 
-let newArray = []
+const transformToUpperCase = function(array = []) {
+  let newArray = []
 
-function textTransform(millennialWords){
-  for(let i = 0; i < millennialWords.length; i++){
-    newArray.push(millennialWords[i].toUpperCase())
+  for (let i = 0; i < array.length; i++){
+    const wordInUpperCase = array[i].toUpperCase()
+    newArray.push(wordInUpperCase)
   }
+
+  return newArray
 }
 
-textTransform(millennialWords)
+const millennialWordsInUpperCase = transformToUpperCase(millennialWords)
 
-console.log(`${newArray.join(' ')}`)
-
-
+console.log(millennialWordsInUpperCase)
 
 /*
   05
@@ -88,30 +90,25 @@ console.log(`${newArray.join(' ')}`)
 */
 
 const randomNumbers = [-2, 93, 34, -1, 1, 93, 11, -7, 47, -3]
-let quantNum = 0
-let numPositivo = 0
-let numNegativo = 0
 
-function funcaoQuantNum(randomNumbers) { 
-      return quantNum = randomNumbers.length      
+let positiveNumbersCounter = 0
+let negativeNumbersCounter = 0
+
+const isPositive = function (number = 0) {
+  return number >= 1
 }
 
-funcaoQuantNum(randomNumbers)
+for (let i = 0; i < randomNumbers.length; i++) {
+  const isPositiveNumber = isPositive(randomNumbers[i])
 
-function funcaoProcuraNums(){ 
-  for(let i = 0; i < randomNumbers.length; i++){
-    if(randomNumbers[i] > 0){
-      numPositivo++
-    }else{
-      numNegativo++
-    }
+  if(isPositiveNumber) {
+    positiveNumbersCounter++
+  }else{
+    negativeNumbersCounter++
   }
 }
 
-
-funcaoProcuraNums()
-
-console.log(`O array "randomNumbers" possui ${quantNum} números, sendo ${numPositivo} positivos e ${numNegativo} negativos.`)
+console.log(`O array "randomNumbers" possui ${randomNumbers.length} números, sendo ${positiveNumbersCounter} positivos e ${negativeNumbersCounter} negativos.`)
 
 /*
   06
@@ -123,19 +120,25 @@ console.log(`O array "randomNumbers" possui ${quantNum} números, sendo ${numPos
     função.
 */
 
-let impares = []
+const getOddNumbers = function (numbers = []) {
+  let newArray = []
 
-function getOddNumbers(nums){
-  for(let i = 0; i < nums.length; i++){
-    if(nums[i] % 2){
-      impares.push(nums[i])
+  for (let i = 0; i < numbers.length; i++){
+    const number = numbers[i]
+    const isOddNumber = number % 2 !== 0
+
+    if (isOddNumber) {
+      newArray.push(number) 
     }
   }
+  
+  return newArray
 }
 
-getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
+const oddNumbers = getOddNumbers([83, 52, 31, 73, 98, 37, 61, 56, 12, 24, 35, 3, 34, 80, 42])
 
-console.log(`Números ímpares ${impares.join(', ')}`)
+console.log(oddNumbers)
+
 
 
 /*
@@ -175,10 +178,11 @@ const functions = [
   function () { return 'Ocidentais.' }
 ]
 
-let frase = []
+let sentence = ''
 
 for(let i = 0; i < functions.length; i++){
-  frase.push(functions[i]())
+  const string = `${functions[i]()} `
+  sentence += string
 }
 
-console.log(`${frase.join(' ')}`)
+console.log(sentence)
