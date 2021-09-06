@@ -17,7 +17,8 @@
 // }
 
 const convertToString = value => String(value)
-console.log(typeof convertToString(10))
+
+console.log(typeof convertToString(true))
 
 /*
   02
@@ -26,8 +27,9 @@ console.log(typeof convertToString(10))
     recebida por parâmetro possui.
 */
 
-const quantCaracteres = string => string.length
-console.log(quantCaracteres('Ednaldo'))
+const getStringLength = string => string.length
+
+console.log(getStringLength('Ednaldo'))
 
 /*
   03
@@ -39,9 +41,10 @@ console.log(quantCaracteres('Ednaldo'))
   "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
 */
 
-const mensagem = "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
-const convertLawercase = texto => texto.toLowerCase()  
-console.log(convertLawercase(mensagem))
+const text = "CHOCOTONE E OVO DE PÁSCOA JUNTOS NO MERCADO EM PLENO FEVEREIRO"
+const convertToLawerCase = text => text.toLowerCase()  
+
+console.log(convertToLawerCase(text))
 
 /*
   04
@@ -50,8 +53,9 @@ console.log(convertLawercase(mensagem))
   - Ao ser invocada, a função deve retornar o index do caractere na string.
 */
 
-const toString = (caractere, string) => string.indexOf(caractere)
-console.log(toString('3', '123'))
+const getIndex = (character, string) => string.indexOf(character)
+
+console.log(getIndex('3', '123'))
 
 /*
   05
@@ -60,8 +64,9 @@ console.log(toString('3', '123'))
     passado por argumento existe no array (também passado por argumento).
 */
 
-const verifica = (item, array) => array.includes(item)
-console.log(verifica(5, [1,2,3]))
+const isItemIncluded = (item, array) => array.includes(item)
+
+console.log(isItemIncluded(4, [8,4,7]))
 
 /*
   06
@@ -70,8 +75,9 @@ console.log(verifica(5, [1,2,3]))
     argumentos em sua invocação;
 */
 
-const funcArray = (arrayUm, arrayDois) => arrayUm.concat(arrayDois)
-console.log(funcArray([1, 2, 3, 4], [5, 6, 7, 8]))
+const concatArrays = (firstArray, secondArray) => firstArray.concat(secondArray)
+
+console.log(concatArrays([1, 2, 3], [4, 5, 6]))
 
 /*
   07
@@ -80,8 +86,12 @@ console.log(funcArray([1, 2, 3, 4], [5, 6, 7, 8]))
     mas com o último item removido.
 */
 
-const trasArray = itens => itens.slice(0, -1)
-console.log(trasArray(['um', 'dois', 'tres', 'quatro']))
+const removeLastItem = array => {
+  array.pop()
+  return array
+}
+
+console.log(removeLastItem([1, 2, 3, 4]))
 
 /*
   08
@@ -90,8 +100,9 @@ console.log(trasArray(['um', 'dois', 'tres', 'quatro']))
     invocação é null.
 */
 
-const insertNull = value => value === null
-console.log(insertNull(null))
+const isNull = value => value === null
+
+console.log(isNull(null))
 
 /*
   09
@@ -104,13 +115,15 @@ console.log(insertNull(null))
     foi exibido.
 */
 
-const invocaCallBack = callback => callback()
+const invokeCallback = callback => {
+  callback()
+}
 
 const logName = () => {
   console.log('Ednaldo Brito')
 }
 
-invocaCallBack(logName)
+invokeCallback(logName)
 
 /*
   10
@@ -123,13 +136,13 @@ invocaCallBack(logName)
     resulte no triplo de 33.
 */
 
-const chamaCallback = (value, callback) => {
+const callCallback = (value, callback) => {
   return callback(value)
 }
 
-const triplo = num => num * 3
+const triple = number => number * 3
 
-console.log(chamaCallback(33, triplo))
+console.log(callCallback(33, triple))
 
 /*
   11
@@ -142,14 +155,14 @@ console.log(chamaCallback(33, triplo))
 
 const numbers = [1, 2, 3]
 
-const showNumbersItems = (item, index, array) => {
-  const itensPosition = index + 1
+const showNumbersInfo = (item, index, array) => {
+  const itemPosition = index + 1
   const items = array.join(', ')
   
-  console.log(`O ${itensPosition}º item do array [${items}] é ${item}.`)
+  console.log(`O ${itemPosition}º item do array [${items}] é ${item}.`)
 }
 
- numbers.forEach(showNumbersItems)
+ numbers.forEach(showNumbersInfo)
 
 /*
   12
@@ -166,8 +179,8 @@ let lettersCopy = []
 //   lettersCopy.push(letters[i])
 // }
 
-letters.forEach((item) => {
-  lettersCopy.push(item)
+letters.forEach(letter => {
+  lettersCopy.push(letter)
 })
 
 console.log(lettersCopy)
