@@ -215,11 +215,11 @@ const review = [
 
 let paragraphs = ''
 
-const createParagraph = (item) => {
-  paragraphs += `<p>${item}</p>`
+const createParagraphs = paragraph => {
+  paragraphs += `<p>${paragraph}</p>`
 }
 
-review.forEach(createParagraph)
+review.forEach(createParagraphs)
 
 section.innerHTML = paragraphs
 
@@ -244,23 +244,23 @@ section.innerHTML = paragraphs
     pessoas já mencionadas no início da mensagem).
 */
 
-const nomes = (nomes = []) => {
-    const primeiro = nomes[0]
-    const segundo = nomes[1]
-    const terceiro = nomes[2]
-    const total = nomes.length - 2
+const getLikesMessage = (names = []) => {
+    const firstName = names[0]
+    const secundName = names[1]
+    const thirdName = names[2]
+    const totalNamesMinusTwo = names.length - 2
   
-    switch(nomes.length){
+    switch(names.length){
       case 0:
         return "Ninguém curtiu isso"
       case 1:
-        return `${primeiro} curtiu isso`
+        return `${firstName} curtiu isso`
       case 2:
-        return `${primeiro} e ${segundo} curtiram isso`
+        return `${firstName} e ${secundName} curtiram isso`
       case 3:
-        return `${primeiro}, ${segundo} e ${terceiro} curtiram isso`
+        return `${firstName}, ${secundName} e ${thirdName} curtiram isso`
       default:
-        return `${primeiro}, ${segundo} e mais ${total} pessoas curtiram isso.`
+        return `${firstName}, ${secundName} e mais ${totalNamesMinusTwo} pessoas curtiram isso.`
     }
 }
-console.log(nomes(['ed', 'ze', 'ana']))
+console.log(getLikesMessage(['ed', 'ze', 'ana', 'lucas', 'pedro', 'paulo', 'joao']))

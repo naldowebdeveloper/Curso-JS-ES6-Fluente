@@ -50,11 +50,12 @@ console.log(cat.age)
     adicionado.
 */
 
-const addGato = (friend, object) => {
-  console.log(object)
+const addFriend = (friend, object) => {
   object.bestFriends.push(friend)
 }
-addGato('bruninho', cat)
+
+addFriend('bruninho', cat)
+
 console.log(cat.bestFriends)
 
 /*
@@ -75,11 +76,11 @@ console.log(cat.bestFriends)
 
 // console.log(cat)
 
-const adicionaCor = object => {
+const changeColor = object => {
   object['color'] += ` e azul`
 }
 
-adicionaCor(cat)
+changeColor(cat)
 
 const colorProperty = 'color'
 
@@ -93,9 +94,9 @@ console.log(cat[colorProperty])
   - Utilize a função para exibir no console se "cat" é um objeto.
 */
 
-const verObj = verifica => typeof cat === 'object'
+const isObject = value => typeof value === 'object'
 
-console.log(verObj(cat))
+console.log(isObject(cat))
 
 /*
   07
@@ -107,7 +108,7 @@ console.log(verObj(cat))
   "A soma das idades de NOME_DO_GATO e NOME_DO_CACHORRO é RESULTADO_DA_SOMA."
 */
 
-const dog = { 
+let dog = { 
   nome : 'lara',
   age : 4,
   color : 'branco',
@@ -115,9 +116,11 @@ const dog = {
   sound : () => 'auauauauau'
 }
 
-const somaoObjt = (cat, dog) =>  `A soma das idades de ${cat.nome} e ${dog.nome} é ${cat.age + dog.age}.`
+const getAgeMessage = (cat, dog) =>  `A soma das idades de ${cat.nome} e ${dog.nome} é ${cat.age + dog.age}.`
 
-console.log(somaoObjt(cat, dog))
+const ageMessage = getAgeMessage(cat, dog)
+
+console.log(ageMessage)
 
 /*
   08
