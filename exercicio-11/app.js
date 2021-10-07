@@ -28,7 +28,13 @@ user.logBlogPosts()
   - Ela deve ter um escopo global.
 */
 
-const myName = "Ednaldo Brito"
+const name = "Ednaldo"
+
+for (let i = 0; i < 5; i++) {
+  console.log(`dentro do bloco de código: ${name}`)
+}
+
+console.log(`fora do bloco de código: ${name}`)
 
 /*
   02
@@ -44,13 +50,13 @@ const myName = "Ednaldo Brito"
   - Você sabe por que isso aconteceu?
 */
 
-const mostraIdade = (ano) => {
-  let idade = ano
-  return idade
+const logAge = () => {
+  let age = 31
+  console.log(age)
 }
 
-mostraIdade(32)
-//console.log(idade)
+logAge()
+//console.log(age)
 
 /*
   03
@@ -81,7 +87,7 @@ const car = {
   },
   stop () {
     this.isRunning = false
-    return `A ${this.name} está parada`
+    return `A ${this.name} está parado`
   },
   getColorsMessage () {
     const lastItem = this.colors[this.colors.length - 1]
