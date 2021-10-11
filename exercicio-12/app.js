@@ -27,16 +27,16 @@ const best2019Movies = [
   { title: 'A Vida Invisível', directedBy: 'Karim Aïnouz' }
 ]
 
-let mensagem = 'Segundo o site Omelete, os melhores filmes de 2019 são:'
+let message = 'Segundo o site Omelete, os melhores filmes de 2019 são:'
 
-const gereMensagem = filme => {
-  mensagem += `
-  - ${filme.title}, dirigido por ${filme.directedBy}`
+const generateMovieMessege = movie => {
+  message += `
+  - ${movie.title}, dirigido por ${movie.directedBy}`
 }
 
-best2019Movies.forEach(gereMensagem)
+best2019Movies.forEach(generateMovieMessege)
 
-console.log(mensagem)
+console.log(message)
 
 /*
   02
@@ -71,16 +71,16 @@ const youtubeUser = {
     },
     country: 'Brasil'
   },
-  mostraVideo () { 
+  getRecentVideos () { 
     console.log(`Vídeos recentes de ${this.name}:`)
     
-    this.videos.recentVideos.forEach(video =>{
+    this.videos.recentVideos.forEach(video => {
       console.log(video.title)
     })
   }
 }
 
-youtubeUser.mostraVideo()
+youtubeUser.getRecentVideos()
 
 
 /*
@@ -90,8 +90,8 @@ youtubeUser.mostraVideo()
 */
 
 const pi = Math.PI
-const mostraPi = pi => pi
-console.log(mostraPi(pi))
+const getPi = pi => pi
+console.log(getPi(pi))
 
 /*
   04
