@@ -1,15 +1,3 @@
-// const h1 = document.querySelector('body > h1')
-// console.log(h1)
-
-const paragraphs = document.querySelectorAll('p')
-const errors = document.querySelectorAll('.error')
-
-console.log(errors)
-
-// paragraphs.forEach(paragraph => {
-//   console.log(paragraph)
-// })
-
 /*
   01
 
@@ -27,10 +15,6 @@ const getCatInfo = () => {
   
   return {name, age, color}
 }
-
-// const name = getCatInfo().name
-// let age = getCatInfo().age
-// const color = getCatInfo().color
 
 const { name, age, color } = getCatInfo()
 
@@ -140,8 +124,8 @@ console.log(zequinha)
   </section>
 */
 
-const titulo = document.querySelector('.main-title')
-console.log(titulo)
+const h1 = document.querySelector('.main-title')
+console.log(h1)
 
 /*
   07
@@ -151,5 +135,5 @@ console.log(titulo)
   - Exiba esse NodeList no console.
 */
 
-const titulosSecundarios = document.querySelectorAll('.secondary-title')
-console.log(titulosSecundarios)
+const allH2 = document.querySelectorAll('.secondary-title')
+console.log(allH2)
