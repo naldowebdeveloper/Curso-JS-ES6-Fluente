@@ -24,11 +24,11 @@ title.textContent = title.textContent.toUpperCase()
 const numbers = [ 53, 24, 3, 8, 1, 6, 57, 80, 77, 98, 55 ]
 const ul = document.querySelector('.numbers')
 
-const insertUl = number => {
+const insertNumberIntoUl = number => {
   ul.innerHTML += `<li class="number">${number}</li>`
 }
 
-numbers.forEach(insertUl)
+numbers.forEach(insertNumberIntoUl)
 
 /*
   03
@@ -75,8 +75,8 @@ body.classList.add('body-background')
     do link do index.html.
 */
 
-const elemento = document.querySelector('.link')
-elemento.setAttribute('href', 'https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo')
+const repoLink = document.querySelector('.link')
+repoLink.setAttribute('href', 'https://github.com/roger-melo-treinamentos/curso-de-js-roger-melo')
 
 /*
   06
@@ -84,7 +84,7 @@ elemento.setAttribute('href', 'https://github.com/roger-melo-treinamentos/curso-
   - Exiba o novo valor do atributo href do link no console.
 */
 
-console.log(elemento.getAttribute('href'))
+console.log(repoLink.getAttribute('href'))
 
 /*
   07
@@ -101,7 +101,7 @@ console.log(title.style)
 
   - Remova a classe "body-background", do elemento body.
 */
-
+ 
 body.classList.remove('body-background')
 
 /*
@@ -111,5 +111,5 @@ body.classList.remove('body-background')
   - Não utilize o método remove() para fazer isso.
 */
 
-elemento.classList.toggle('link')
-elemento.classList.toggle('link')
+repoLink.classList.toggle('link')
+repoLink.classList.toggle('link')
