@@ -20,7 +20,7 @@
 // console.log(lis)
 
 
-/* fatorado */
+/* refatorado */
 const ul = document.querySelector('ul')
 const lis = Array.from(ul.children)
 
@@ -77,7 +77,7 @@ console.log('previousElementSibling', ul.previousElementSibling)
 // })
 
 
-/* Fatorado */
+/* refatorado */
 const showClickedLi = event => {
   console.log(event.target)
 }
@@ -119,7 +119,7 @@ const videos = [{
 // })
 
 
-/* Fatorado */
+/* Refatorado */
 const insertVideoLi = ({ name, length }) => {
   ul.innerHTML += `<li>${name} | ${length}</li>`
 }

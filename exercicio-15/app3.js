@@ -2,7 +2,7 @@ const ul = document.querySelector('ul')
 // ul.remove()
 
 // const button = document.querySelector('button')
-//console.log(button)
+// console.log(button)
 
 // button.addEventListener('click', () => {
 //     console.log('button clicked')

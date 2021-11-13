@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 .egg {
   width: 300px;
   height: 300px;
@@ -15,10 +19,6 @@
   background: #eee;
   text-align: center;
   padding: 20px;
-}
-
-*{
-  box-sizing: border-box;
 }
 
 button{
