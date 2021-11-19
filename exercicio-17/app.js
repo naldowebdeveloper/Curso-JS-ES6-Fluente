@@ -19,7 +19,7 @@ const logMessage = message => {
   clearInput()
 }
 
-form.addEventListener('submit', event => {
+const handleSubmit = event => {
   event.preventDefault()
 
   const input = event.target.input
@@ -32,7 +32,9 @@ form.addEventListener('submit', event => {
   }
 
   logMessage('Valor inválido =(')
-})
+}
+
+form.addEventListener('submit', handleSubmit);
 
 /*
   02
