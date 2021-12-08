@@ -29,4 +29,3 @@ form.username.addEventListener('keyup', event => {
 })
 
 
-//form.username.addEventListener('keyup', event => { })
